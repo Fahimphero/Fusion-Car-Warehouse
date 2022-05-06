@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "2022 FORD MUSTANG SHELBY",
+        "image": "https://i.ibb.co/3CxM6hB/Product-1.jpg",
+        "body": " Aptly called Predator, the motor is a supercharged 5.2-liter V-8 that summons 760 horsepower and 625 pound-feet of torque.",
+        "price": "79,155",
+        "quantity": 10,
+        "company": "Ford Motor Company"
+    },
+    {
+        "_id": 2,
+        "name": "Porsche 911",
+        "image": "https://i.ibb.co/L16C3mN/Product-2.jpg",
+        "body": "Considering this is a luxury brand, this number says a lot of its reliability and driving performance. The Porsche 911 was recently hailed by J.D. Power's 2021 U.S. Vehicle Dependability Study as the most dependable and trouble-free car to own.",
+        "price": "99,200",
+        "quantity": 8,
+        "company": "Porsche Company"
+    },
+    {
+        "_id": 3,
+        "name": "Ferrari F8 Tributo",
+        "image": "https://i.ibb.co/m5ZSGnd/Product-4.jpg",
+        "body": "It’s the stuff of which legends are made. Drama with a capital D. Ferrari’s F8 Tributo, the successor of the legendary 488 GTB, contains the most powerful V8 engine ever offered by the Italian automaker.",
+        "price": "276,550",
+        "quantity": 14,
+        "company": "Ferrari"
+    },
+    {
+        "_id": 4,
+        "name": "Aston Martin Valkyrie",
+        "image": "https://i.ibb.co/7Krd0BD/Product-3.jpg",
+        "body": "The Valkyrie's hybrid powertrain consists of a naturally aspirated 6.5-liter V-12 and an electric motor. The Aston Martin Valkyrie provides seating for two. The cockpit is shaped like a teardrop.",
+        "price": "3,500,000",
+        "quantity": 17,
+        "company": "Aston Martin"
+    },
+    {
+        "_id": 5,
+        "name": "BMW i8",
+        "image": "https://i.ibb.co/PFH1rfj/Product-6.jpg",
+        "body": "The BMW i8 is a unique proposition in the luxury sports car market. A rival to the ubiquitous Porsche 911,the i8 brings a dose of eco-consciousness to the segment thanks to its petrol-electric plug-in hybrid powertrain.",
+        "price": "164,295",
+        "quantity": 7,
+        "company": "Bayerische Motoren Werke AG"
+    },
+    {
+        "_id": 6,
+        "name": "Lamborghini Huracán STO",
+        "image": "https://i.ibb.co/d7h0jhT/Product-5.jpg",
+        "body": "Propelling the Lamborghini STO is the 5.2-litre naturally aspirated V10 engine that produces a maximum power output of 630bhp and a peak torque of 565Nm.",
+        "price": "327,838",
+        "quantity": 10,
+        "company": "Lamborghini Company"
+    }
+]

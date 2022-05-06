@@ -1,0 +1,12 @@
+.banner {
+    height: 650px;
+
+}
+
+
+@media (max-width: 425px) {
+    .banner {
+        height: 60vh;
+
+    }
+}

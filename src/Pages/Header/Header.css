@@ -1,0 +1,13 @@
+link {
+    text-decoration: none;
+}
+
+
+.link-name button {
+    border: 1px solid black;
+}
+
+.hidden-button {
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
