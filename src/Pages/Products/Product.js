@@ -10,7 +10,6 @@ const Product = ({ product }) => {
     }
 
     return (
-        // style="max-width: 540px;"
         <div className='col-12 col-lg-6'>
             <div className="card mb-3 w-100 hover" >
                 <div className="row g-0">

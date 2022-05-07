@@ -75,7 +75,7 @@ const Inventory = () => {
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a>  */}
                 </div>
             </div>
-            <div className=' d-flex justify-content-center mb-3'>
+            <div className=' d-flex justify-content-center mb-4'>
                 <form className='px-4 pt-4'>
                     <label htmlFor="exampleInputEmail1" className="form-label fs-5 text-light">Restock the items</label><br />
                     <input type="number" name="" id="" />

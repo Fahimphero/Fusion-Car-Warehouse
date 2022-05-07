@@ -44,7 +44,7 @@ const Header = () => {
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Manage Products</button>
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Add Products</button>
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>My Products</button>
-                                        <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>SignOut</button>
+                                        <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Logout</button>
                                     </>
                                     :
                                     <button className='btn btn-danger  rounded-0 '><Nav.Link className='text-light' as={Link} to="/login">Login</Nav.Link ></button>
@@ -57,7 +57,7 @@ const Header = () => {
 
 
 
-
+                            <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/blogs">Blogs</Nav.Link ></button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

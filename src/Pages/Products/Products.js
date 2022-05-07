@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import UseProducts from '../../Hooks/UseProducts';
 import Product from './Product';
 import './Products.css'
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    // const [count, setCount] = useState();
-    // const arrayLength = products.length;
-    // arrayLength(arrayLength);
+    const [products, setProducts] = UseProducts();
+    const navigate = useNavigate();
 
+    const handleNavigation = () => {
+        navigate('/manageInventories')
+    }
 
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
 
     return (
         <div className='container bg-danger rounded-3'>
@@ -21,6 +19,9 @@ const Products = () => {
                 {
                     products.slice(0, 6).map(product => <Product product={product} key={product._id}></Product>)
                 }
+            </div>
+            <div className='d-flex justify-content-center'>
+                <button onClick={() => handleNavigation()} className='btn btn-dark  mb-3 '>Manage Inventories</button>
             </div>
         </div>
     );
