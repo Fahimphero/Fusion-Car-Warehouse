@@ -4,12 +4,45 @@ import UseProducts from '../../Hooks/UseProducts';
 const ManageInventory = () => {
     const [products, setProducts] = UseProducts();
 
+    const handleDelete = (id) => {
+
+    }
+
     return (
-        <div className='container bg-danger rounded-3'>
-            <div className="row g-4 mt-5">
-                {
-                    products.slice(0, 6).map(product => <Product product={product} key={product._id}></Product>)
-                }
+        <div className='bg-dark'>
+            <div className='container py-5'>
+                <div className="row g-4 bg-danger rounded-3">
+                    {
+                        products.map(product =>
+
+                            <div key={product._id} className='col-12 col-lg-6'>
+                                <div className="card mb-3 w-100 hover" >
+                                    <div className="row g-0">
+                                        <div className="col-md-6 overflow-hidden">
+                                            <img src={product.image} className="img-fluid rounded-start h-100" alt="..."></img>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="card-body">
+                                                <h5 className="card-title fw-bolder">{product.name}</h5>
+                                                <div className='card-text'>
+                                                    <p > {product.body.slice(0, 100)}...</p>
+                                                    <div className='d-flex justify-content-between'>
+                                                        <p > <strong className='fs-5'>Price:</strong> <span className='text-danger fw-bold fs-5'>${product.price}</span> </p>
+                                                        <p><strong className='fs-5'>Quantity:</strong> <span className='text-danger fw-bold fs-5'>{product.quantity}</span></p>
+                                                    </div>
+                                                    <div className='d-flex justify-content-between align-items-center'>
+                                                        <p className='mb-0'><strong className='fs-6'>Company: </strong> {product.company}</p>
+                                                        <button onClick={() => handleDelete(product._id)} className='btn btn-danger'><small>Manage</small></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>)
+                    }
+                </div>
             </div>
         </div>
     );
