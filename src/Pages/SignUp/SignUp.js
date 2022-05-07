@@ -2,6 +2,8 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
@@ -9,8 +11,10 @@ const SignUp = () => {
     const [userPassword, setUserPassword] = useState('');
     const [userConfirmPassword, setUserConfirmPassword] = useState('');
     const [customError, setCustomError] = useState('');
+    const navigate = useNavigate()
+    const location = useLocation();
 
-
+    let from = location.state?.from?.pathname || "/";
 
 
     const [
@@ -18,21 +22,26 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     const handleEmailSignUp = (event) => {
         event.preventDefault();
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(password)
+        // console.log(password)
         const confirmPassword = event.target.confirmPassword.value;
-        console.log(confirmPassword)
+        // console.log(confirmPassword)
         setUserEmail(email);
         setUserPassword(password);
         setUserConfirmPassword(confirmPassword);
         if (confirmPassword === password) {
             createUserWithEmailAndPassword(email, password);
+
         }
         else {
             setCustomError("Your two passwords didn't match");
@@ -87,6 +96,7 @@ const SignUp = () => {
 
                 </div>
             </div>
+
         </div>
     );
 };

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './inventory.css';
 
 
 const Inventory = () => {
+    const [user, loading, error] = useAuthState(auth);
+    var userName = user.displayName;
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState('');
     const [delivered, setDelivered] = useState('');
@@ -18,7 +22,31 @@ const Inventory = () => {
     }, [])
 
     const handleDelivered = (quantity) => {
-        console.log(quantity)
+        console.log(quantity);
+        // const [user, loading, error] = useAuthState(auth);
+        // const name = user.displayName;
+        const decreaseQuantity = quantity - 1;
+        const update = { userName, decreaseQuantity }
+        console.log(update);
+
+        // const url = `http://localhost:5000/products/${id}`
+        fetch(`http://localhost:5000/products/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(update)
+
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('Quantity updated successfully');
+
+            })
+
 
     }
 
@@ -46,6 +74,13 @@ const Inventory = () => {
                     </div>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a>  */}
                 </div>
+            </div>
+            <div className=' d-flex justify-content-center mb-3'>
+                <form className='px-4 pt-4'>
+                    <label htmlFor="exampleInputEmail1" className="form-label fs-5 text-light">Restock the items</label><br />
+                    <input type="number" name="" id="" />
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         </div>
     );
