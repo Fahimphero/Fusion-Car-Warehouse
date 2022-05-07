@@ -1,10 +1,33 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UseProducts from '../../Hooks/UseProducts';
 
 const ManageInventory = () => {
     const [products, setProducts] = UseProducts();
+    const navigate = useNavigate();
+
+    const handleNavigation = () => {
+        navigate('/addinventory')
+    }
+
 
     const handleDelete = (id) => {
+        console.log(id);
+        const proceed = window.confirm('Are you sure?');
+
+        if (proceed) {
+            const url = `http://localhost:5000/products/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = products.filter(product => product._id !== id);
+                    setProducts(remaining);
+                })
+
+        }
 
     }
 
@@ -43,6 +66,9 @@ const ManageInventory = () => {
                             </div>)
                     }
                 </div>
+            </div>
+            <div className='d-flex justify-content-center'>
+                <button onClick={() => handleNavigation()} className='btn btn-danger  mb-4 '>Add New Item</button>
             </div>
         </div>
     );

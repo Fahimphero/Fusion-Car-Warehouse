@@ -41,9 +41,9 @@ const Header = () => {
                             {
                                 user ?
                                     <>
-                                        <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Manage Products</button>
-                                        <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Add Products</button>
-                                        <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>My Products</button>
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/manageInventories">Manage Products</Nav.Link ></button>
+                                        <button className='btn btn-danger rounded-0 py-3 '>Add Products</button>
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/">My Products</Nav.Link ></button>
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Logout</button>
                                     </>
                                     :

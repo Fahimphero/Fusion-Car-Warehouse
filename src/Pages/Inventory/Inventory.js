@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './inventory.css';
 
@@ -12,7 +12,13 @@ const Inventory = () => {
     const [quantity, setQuantity] = useState('');
     const [delivered, setDelivered] = useState('');
     const { id } = useParams();
-    console.log(id);
+    const navigate = useNavigate();
+    // console.log(id);
+
+    const handleNavigation = () => {
+        navigate('/manageInventories')
+    }
+
 
     useEffect(() => {
         const url = `http://localhost:5000/products/${id}`
@@ -74,6 +80,9 @@ const Inventory = () => {
                     </div>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a>  */}
                 </div>
+            </div>
+            <div className='d-flex justify-content-center mt-3'>
+                <button onClick={() => handleNavigation()} className='btn btn-danger'>Manage Inventories</button>
             </div>
             <div className=' d-flex justify-content-center mb-4'>
                 <form className='px-4 pt-4'>
