@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({ product }) => {
-    console.log(product);
+    // console.log(product);
+    const navigate = useNavigate();
+    const handleManage = (id) => {
+        navigate(`/inventory/${id}`);
+    }
+
     return (
         // style="max-width: 540px;"
         <div className='col-12 col-lg-6'>
@@ -22,7 +28,7 @@ const Product = ({ product }) => {
                                 </div>
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <p className='mb-0'><strong className='fs-6'>Company: </strong> {product.company}</p>
-                                    <button className='btn btn-danger'><small>Manage</small></button>
+                                    <button onClick={() => handleManage(product._id)} className='btn btn-danger'><small>Manage</small></button>
                                 </div>
                             </div>
 

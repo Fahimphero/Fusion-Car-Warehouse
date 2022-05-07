@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .product-detail {
+        width: 90%;
+
+    }
+
+}
+
+@media (min-width: 768px) {
+    .product-detail {
+        width: 40%;
+
+    }
+
+}

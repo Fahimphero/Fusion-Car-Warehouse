@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 
 const Login = () => {
@@ -33,7 +34,8 @@ const Login = () => {
     }
 
     if (loading1) {
-        Element = <p className='text-dark'><span className='fs-5 fw-bold'>Loading... </span> </p>
+        // Element = <p className='text-dark'><span className='fs-5 fw-bold'>Loading... </span> </p>
+        return <Loading></Loading>;
     }
     if (error || error1) {
         Element = <p className='text-dark'><span className='fs-5 fw-bold'>Error  </span> {error?.message} {error1?.message}</p>
