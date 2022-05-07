@@ -32,7 +32,7 @@ const ManageInventory = () => {
                                                     </div>
                                                     <div className='d-flex justify-content-between align-items-center'>
                                                         <p className='mb-0'><strong className='fs-6'>Company: </strong> {product.company}</p>
-                                                        <button onClick={() => handleDelete(product._id)} className='btn btn-danger'><small>Manage</small></button>
+                                                        <button onClick={() => handleDelete(product._id)} className='btn btn-danger'><small>Delete</small></button>
                                                     </div>
                                                 </div>
 
