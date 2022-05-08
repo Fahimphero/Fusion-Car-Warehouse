@@ -33,7 +33,7 @@ const Inventory = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -50,7 +50,7 @@ const Inventory = () => {
         const update = { decreaseQuantity };
         console.log(update)
 
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -79,7 +79,7 @@ const Inventory = () => {
         const update = { decreaseQuantity }
         console.log(update);
 
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

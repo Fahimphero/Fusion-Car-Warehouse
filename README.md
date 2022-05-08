@@ -3,6 +3,7 @@ My website: [Fusion Warehouse](https://fusion-warehouse.web.app/).
 # Main Features
 * Bootstrap added
 * Mongodb used as Database
+* NodeJs used as backend server
 * Google Firebase Authentication added
 * React Router added
 * React Firebase hooks added

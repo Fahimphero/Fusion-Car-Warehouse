@@ -12,7 +12,7 @@ const AddProducts = () => {
         console.log(data)
 
 
-        axios.post('http://localhost:5000/clientproducts', data)
+        axios.post('https://pure-harbor-50785.herokuapp.com/clientproducts', data)
             .then(function (response) {
                 console.log(response);
             })

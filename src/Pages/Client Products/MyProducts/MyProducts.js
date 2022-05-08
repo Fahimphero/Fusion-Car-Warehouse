@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const MyProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/clientproducts')
+        fetch('https://pure-harbor-50785.herokuapp.com/clientproducts')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -22,7 +22,7 @@ const MyProducts = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `http://localhost:5000/clientproducts/${id}`
+            const url = `https://pure-harbor-50785.herokuapp.com/clientproducts/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

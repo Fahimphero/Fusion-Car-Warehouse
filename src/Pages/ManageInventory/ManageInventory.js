@@ -16,7 +16,7 @@ const ManageInventory = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
