@@ -11,8 +11,8 @@ import defaultUser from '../../Images/DefaultUser.png';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user);
-    console.log(user);
+    // console.log(user);
+    // console.log(user);
 
     const handleSignOut = () => {
         signOut(auth);

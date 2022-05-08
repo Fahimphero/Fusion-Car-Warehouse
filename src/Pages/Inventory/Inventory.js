@@ -17,7 +17,7 @@ const Inventory = () => {
 
     const getInputValue = (event) => {
         var userValue = (event.target.value);
-        console.log(userValue);
+        // console.log(userValue);
         setValue(userValue);
 
     }
@@ -42,13 +42,13 @@ const Inventory = () => {
 
     const handleRestock = (number) => {
 
-        console.log(typeof number);
-        console.log(typeof value);
+        // console.log(typeof number);
+        // console.log(typeof value);
         const decreaseQuantity = parseInt(number) + parseInt(value)
-        console.log(decreaseQuantity);
+        // console.log(decreaseQuantity);
         setRestock(decreaseQuantity);
         const update = { decreaseQuantity };
-        console.log(update)
+        // console.log(update)
 
         const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
         fetch(url, {
