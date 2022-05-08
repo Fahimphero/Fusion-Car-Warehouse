@@ -9,10 +9,23 @@ const Inventory = () => {
 
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState();
-    const [delivered, setDelivered] = useState('');
+    const [restock, setRestock] = useState();
+    const [value, setValue] = useState('');
     const { id } = useParams();
     const navigate = useNavigate();
     // console.log(id);
+
+    const getInputValue = (event) => {
+        var userValue = (event.target.value);
+        console.log(userValue);
+        setValue(userValue);
+
+    }
+
+
+
+
+
 
     const handleNavigation = () => {
         navigate('/manageInventories')
@@ -24,7 +37,38 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
-    }, [quantity])
+    }, [quantity, restock])
+
+
+    const handleRestock = (number) => {
+
+        console.log(typeof number);
+        console.log(typeof value);
+        const decreaseQuantity = parseInt(number) + parseInt(value)
+        console.log(decreaseQuantity);
+        setRestock(decreaseQuantity);
+        const update = { decreaseQuantity };
+        console.log(update)
+
+        const url = `http://localhost:5000/products/${id}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(update)
+
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                // alert('Quantity updated successfully');
+
+            })
+
+    }
 
     const handleDelivered = (quantity) => {
         setQuantity(quantity)
@@ -49,9 +93,10 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
-                alert('Quantity updated successfully');
+                // alert('Quantity updated successfully');
 
             })
+
 
 
     }
@@ -85,11 +130,11 @@ const Inventory = () => {
                 <button onClick={() => handleNavigation()} className='btn btn-danger'>Manage Inventories</button>
             </div>
             <div className=' d-flex justify-content-center mb-4'>
-                <form className='px-4 pt-4'>
+                <div className='px-4 pt-4'>
                     <label htmlFor="exampleInputEmail1" className="form-label fs-5 text-light">Restock the items</label><br />
-                    <input type="number" name="" id="" />
-                    <input type="submit" value="Submit" />
-                </form>
+                    <input onChange={getInputValue} type="number" name="restock" id="" />
+                    <button className='btn btn-danger' onClick={() => handleRestock(product.quantity)} type="submit"  >Submit</button>
+                </div>
             </div>
         </div>
     );

@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+My website: [Fusion Warehouse](https://fusion-warehouse.web.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Main Features
+* Bootstrap added
+* Mongodb used as Database
+* Google Firebase Authentication added
+* React Router added
+* React Firebase hooks added
+* Javascript library React is used to built this website
 
 ## Available Scripts
 

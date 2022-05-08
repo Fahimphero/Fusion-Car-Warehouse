@@ -12,6 +12,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import AddInventory from './Pages/AddInventory/AddInventory';
+import AddProducts from './Pages/Client Products/AddProducts/AddProducts';
+import MyProducts from './Pages/Client Products/MyProducts/MyProducts';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/manageInventories' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/addinventory' element={<AddInventory></AddInventory>}></Route>
+        <Route path='/addproducts' element={<AddProducts></AddProducts>}></Route>
+        <Route path='/myproducts' element={<MyProducts></MyProducts>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

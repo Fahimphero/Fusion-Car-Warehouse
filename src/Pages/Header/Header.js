@@ -12,6 +12,7 @@ import defaultUser from '../../Images/DefaultUser.png';
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     console.log(user);
+    console.log(user);
 
     const handleSignOut = () => {
         signOut(auth);
@@ -42,8 +43,8 @@ const Header = () => {
                                 user ?
                                     <>
                                         <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/manageInventories">Manage Products</Nav.Link ></button>
-                                        <button className='btn btn-danger rounded-0 py-3 '>Add Products</button>
-                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/">My Products</Nav.Link ></button>
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/addproducts">Add Products</Nav.Link ></button>
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/myproducts">My Products</Nav.Link ></button>
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Logout</button>
                                     </>
                                     :
