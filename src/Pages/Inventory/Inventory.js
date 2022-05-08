@@ -6,10 +6,9 @@ import './inventory.css';
 
 
 const Inventory = () => {
-    const [user, loading, error] = useAuthState(auth);
-    var userName = user.displayName;
+
     const [product, setProduct] = useState({});
-    const [quantity, setQuantity] = useState('');
+    const [quantity, setQuantity] = useState();
     const [delivered, setDelivered] = useState('');
     const { id } = useParams();
     const navigate = useNavigate();
@@ -25,18 +24,19 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
-    }, [])
+    }, [quantity])
 
     const handleDelivered = (quantity) => {
+        setQuantity(quantity)
         console.log(quantity);
         // const [user, loading, error] = useAuthState(auth);
         // const name = user.displayName;
         const decreaseQuantity = quantity - 1;
-        const update = { userName, decreaseQuantity }
+        const update = { decreaseQuantity }
         console.log(update);
 
-        // const url = `http://localhost:5000/products/${id}`
-        fetch(`http://localhost:5000/products/${id}`, {
+        const url = `http://localhost:5000/products/${id}`
+        fetch(url, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
