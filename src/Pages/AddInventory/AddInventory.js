@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -8,6 +9,14 @@ const AddInventory = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
+
+        axios.post('http://localhost:5000/products', data)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     // console.log(watch("example"));
