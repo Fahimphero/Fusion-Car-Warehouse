@@ -3,6 +3,8 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProducts = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -15,6 +17,7 @@ const AddProducts = () => {
         axios.post('https://pure-harbor-50785.herokuapp.com/clientproducts', data)
             .then(function (response) {
                 console.log(response);
+                toast('Product Added Successfully')
             })
             .catch(function (error) {
                 console.log(error);
@@ -50,6 +53,7 @@ const AddProducts = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -16,7 +16,7 @@ const Footer = () => {
                         <h4 className='text-center'>Newsletter</h4>
                         <p className='text-center'>By subscribing to our company newsletter you will always be up-to-date on our latest promotions, deals and vehicle inventory!</p>
                         <div className='mx-auto'>
-                            <input type="email" className="form-control w-75 d-block  ms-5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email'></input>
+                            <input type="email" className="form-control w-75 d-block  ms-5" id="exampleInputEmail" aria-describedby="emailHelp" placeholder='Email'></input>
                             <button className='btn btn-danger d-block me-auto ms-5 my-2' type="submit">Subscribe</button>
                         </div>
                     </div>

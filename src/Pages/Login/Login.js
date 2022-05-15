@@ -2,11 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import './Login.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -14,6 +16,10 @@ const Login = () => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
+
 
     let from = location.state?.from?.pathname || "/";
     let Element;
@@ -34,11 +40,11 @@ const Login = () => {
         const password = event.target.password.value;
         setUserEmail(email);
         setUserPassword(password);
-        signInWithEmailAndPassword(userEmail, userPassword);
+        signInWithEmailAndPassword(email, password);
 
     }
 
-    if (loading1) {
+    if (loading || loading1) {
         // Element = <p className='text-dark'><span className='fs-5 fw-bold'>Loading... </span> </p>
         return <Loading></Loading>;
     }
@@ -48,7 +54,15 @@ const Login = () => {
     const navigateToSignUp = () => {
         navigate('/signup');
     }
-
+    const handleReset = async () => {
+        if (userEmail) {
+            await sendPasswordResetEmail(userEmail);
+            toast('Sent email');
+        }
+        else {
+            toast('Please enter your email address');
+        }
+    }
 
 
     return (
@@ -69,7 +83,7 @@ const Login = () => {
                         </div>
 
                         <button type="submit" className="btn btn-dark mt-2 w-100 py-2">Log In</button>
-                        <p className='text-center mt-2'><u>Forgotten Password?</u></p>
+                        <p className='text-center  mt-2'><button onClick={handleReset} className=' btn-danger text-dark border-0 p-0'><u>Forgotten Password?</u></button></p>
                         {/* {
                             !error ?
                                 <p></p>
@@ -99,6 +113,7 @@ const Login = () => {
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

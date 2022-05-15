@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UseProducts from '../../Hooks/UseProducts';
+import Loading from '../Loading/Loading';
 
 const ManageInventory = () => {
     const [products, setProducts] = UseProducts();
     const navigate = useNavigate();
-
+    if (products.length === 0) {
+        return <Loading></Loading>
+    }
     const handleNavigation = () => {
         navigate('/addinventory')
     }

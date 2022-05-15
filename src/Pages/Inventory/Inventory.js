@@ -37,7 +37,7 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
-    }, [quantity, restock])
+    }, [product])
 
 
     const handleRestock = (number) => {

@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
@@ -41,7 +42,7 @@ const SignUp = () => {
         setUserConfirmPassword(confirmPassword);
         if (confirmPassword === password) {
             createUserWithEmailAndPassword(email, password);
-
+            toast('Verification Email Sent')
         }
         else {
             setCustomError("Your two passwords didn't match");
@@ -59,9 +60,9 @@ const SignUp = () => {
                 <h1 className='text-center text-danger pt-4'><FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon></h1>
                 <div className='login-form mx-auto bg-danger  rounded-3 '>
                     <form onSubmit={handleEmailSignUp} className='p-4'>
-                        <div class="mb-3">
+                        <div className="mb-3">
                             <label htmlFor="formGroupExampleInput" className="form-label fs-5">Your Name</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="name" required></input>
+                            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="name" required></input>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label fs-5">Email address</label>
@@ -73,8 +74,8 @@ const SignUp = () => {
                             <input type="password" name='password' className="form-control" id="exampleInputPassword1" placeholder='password' required></input>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputPassword1" className="form-label fs-5">Confirm Password</label>
-                            <input type="password" name='confirmPassword' className="form-control" id="exampleInputPassword1" placeholder='confirm password' required></input>
+                            <label htmlFor="exampleConfirmPassword1" className="form-label fs-5">Confirm Password</label>
+                            <input type="password" name='confirmPassword' className="form-control" id="exampleConfirmPassword1" placeholder='confirm password' required></input>
                         </div>
 
                         <button type="submit" className="btn btn-dark mt-2 w-100 py-2 mb-3">SignUp</button>
@@ -96,7 +97,7 @@ const SignUp = () => {
 
                 </div>
             </div>
-
+            <ToastContainer />
         </div>
     );
 };

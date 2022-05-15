@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import './MyProducts.css'
 
 const MyProducts = () => {
     const [products, setProducts] = useState([]);
+    const [user, loading, error] = useAuthState(auth);
     useEffect(() => {
-        fetch('https://pure-harbor-50785.herokuapp.com/clientproducts')
+        fetch(`http://localhost:5000/clientproducts/${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -38,7 +42,7 @@ const MyProducts = () => {
     }
 
     return (
-        <div className='bg-dark'>
+        <div className='bg-dark fix-height' >
             <div className='container py-5'>
                 <div className="row g-4 bg-danger rounded-3">
                     {

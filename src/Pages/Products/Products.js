@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import UseProducts from '../../Hooks/UseProducts';
 import Product from './Product';
 import './Products.css'
+import Loading from '../Loading/Loading';
 
 const Products = () => {
     const [products, setProducts] = UseProducts();
     const navigate = useNavigate();
-
+    if (products.length === 0) {
+        return <Loading></Loading>
+    }
     const handleNavigation = () => {
         navigate('/manageInventories')
     }
