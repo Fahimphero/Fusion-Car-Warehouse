@@ -8,7 +8,7 @@ const MyProducts = () => {
     const [products, setProducts] = useState([]);
     const [user, loading, error] = useAuthState(auth);
     useEffect(() => {
-        fetch(`http://localhost:5000/clientproducts/${user?.email}`)
+        fetch(`https://pure-harbor-50785.herokuapp.com/clientproducts/${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
