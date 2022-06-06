@@ -1,13 +1,13 @@
 My website: [Fusion Warehouse](https://fusion-warehouse.web.app/).
 
 # Main Features
-* Bootstrap added
-* Mongodb used as Database
-* NodeJs used as backend server
-* Google Firebase Authentication added
-* React Router added
-* React Firebase hooks added
-* Javascript library React is used to built this website
+* It’s a car warehouse website that stores cars.
+* Users can sign up or log in to this website using google or email.
+* Users can deliver cars and restock cars easily. 
+* Users can also add or remove cars from the warehouse. 
+* Signed-up users can add new cars and remove their cars from their inventory.
+* Users can also reset their account password if they want to reset it.
+* An account verification email will be sent after a user creates an account.
 
 ## Available Scripts
 
