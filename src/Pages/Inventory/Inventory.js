@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+
 import { useNavigate, useParams } from 'react-router-dom';
-import auth from '../../firebase.init';
+
 import './inventory.css';
 
 
@@ -37,7 +37,7 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
-    }, [product])
+    }, [product, id])
 
 
     const handleRestock = (number) => {

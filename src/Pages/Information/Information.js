@@ -1,4 +1,4 @@
-import { faBuilding, faEarthAsia, faPeopleArrows, faPeopleCarry, faPeopleGroup, faPeopleLine } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faEarthAsia, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Information.css'

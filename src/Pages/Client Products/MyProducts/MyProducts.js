@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+
 import auth from '../../../firebase.init';
 import './MyProducts.css'
 
 const MyProducts = () => {
     const [products, setProducts] = useState([]);
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     useEffect(() => {
         fetch(`https://pure-harbor-50785.herokuapp.com/clientproducts/${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data));
-    }, [])
+    }, [user?.email])
 
 
     // const navigate = useNavigate();

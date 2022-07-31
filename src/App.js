@@ -7,7 +7,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';

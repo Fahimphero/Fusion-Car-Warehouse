@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-import picture from '../../Images/question-mark.jpg'
+import picture from '../../Images/question-mark.webp'
 
 const Blogs = () => {
     return (

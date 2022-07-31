@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import Car1 from '../../Images/Cars/Car 4.jpg';
-import Car2 from '../../Images/Cars/Car 7.png';
-import Car3 from '../../Images/Cars/Car 6.png';
+import Car1 from '../../Images/Cars/Car 4.webp';
+import Car2 from '../../Images/Cars/Car 7.webp';
+import Car3 from '../../Images/Cars/Car 6.webp';
 import './Home.css';
 import Products from '../Products/Products';
 import Information from '../Information/Information';
