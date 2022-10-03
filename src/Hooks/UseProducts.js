@@ -5,7 +5,7 @@ const UseProducts = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://pure-harbor-50785.herokuapp.com/products')
+        fetch('https://fusion-car-warehouse-server.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])

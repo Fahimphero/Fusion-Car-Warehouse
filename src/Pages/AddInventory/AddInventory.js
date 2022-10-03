@@ -10,7 +10,7 @@ const AddInventory = () => {
     const onSubmit = data => {
         console.log(data)
 
-        axios.post('https://pure-harbor-50785.herokuapp.com/products', data)
+        axios.post('https://fusion-car-warehouse-server.onrender.com/products', data)
             .then(function (response) {
                 console.log(response);
             })

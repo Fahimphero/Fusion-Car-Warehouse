@@ -14,7 +14,7 @@ const AddProducts = () => {
         console.log(data)
 
 
-        axios.post('https://pure-harbor-50785.herokuapp.com/clientproducts', data)
+        axios.post('https://fusion-car-warehouse-server.onrender.com/clientproducts', data)
             .then(function (response) {
                 console.log(response);
                 toast('Product Added Successfully')

@@ -33,7 +33,7 @@ const Inventory = () => {
 
 
     useEffect(() => {
-        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
+        const url = `https://fusion-car-warehouse-server.onrender.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
@@ -50,7 +50,7 @@ const Inventory = () => {
         const update = { decreaseQuantity };
         // console.log(update)
 
-        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
+        const url = `https://fusion-car-warehouse-server.onrender.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -79,7 +79,7 @@ const Inventory = () => {
         const update = { decreaseQuantity }
         console.log(update);
 
-        const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
+        const url = `https://fusion-car-warehouse-server.onrender.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -8,7 +8,7 @@ const MyProducts = () => {
     const [products, setProducts] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() => {
-        fetch(`https://pure-harbor-50785.herokuapp.com/clientproducts/${user?.email}`)
+        fetch(`https://fusion-car-warehouse-server.onrender.com/clientproducts/${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [user?.email])
@@ -26,7 +26,7 @@ const MyProducts = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `https://pure-harbor-50785.herokuapp.com/clientproducts/${id}`
+            const url = `https://fusion-car-warehouse-server.onrender.com/clientproducts/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

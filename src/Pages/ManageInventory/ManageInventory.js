@@ -19,7 +19,7 @@ const ManageInventory = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `https://pure-harbor-50785.herokuapp.com/products/${id}`
+            const url = `https://fusion-car-warehouse-server.onrender.com/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
