@@ -1,0 +1,19 @@
+.background-img {
+
+    background-image: url('../../Images/404-image.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.title {
+    transform: translateY(-34vh);
+    font-size: xx-large;
+}
+
+.goback {
+    transform: translateY(-32vh);
+    font-size: xx-large;
+}
