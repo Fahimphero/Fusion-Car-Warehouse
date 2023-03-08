@@ -14,7 +14,7 @@ const Partners = () => {
             <h2 className='text-start text-dark fw-bolder pt-2'>
                 Our Partners
             </h2>
-            <div className='row pb-3 '>
+            <div className='row pb-4 '>
                 <div className='col-4 col-lg-2 d-flex justify-content-center'>
                     <img src={Icon1} alt="" />
                 </div>
