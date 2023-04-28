@@ -6,7 +6,7 @@ import logo from '../../Images/logo.png'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-// import defaultUser from '../../Images/DefaultUser.png';
+import defaultUser from '../../Images/profile-pic.png';
 
 
 const Header = () => {
@@ -39,16 +39,27 @@ const Header = () => {
                             <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/">Home</Nav.Link ></button>
 
 
+
                             {
                                 user ?
                                     <>
                                         <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/manageInventories">Manage Products</Nav.Link ></button>
                                         <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/addproducts">Add Products</Nav.Link ></button>
                                         <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/myproducts">My Products</Nav.Link ></button>
+
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/blogs">Blogs</Nav.Link ></button>
+
+                                        <button className='btn btn-danger  rounded-0 p-0'><img className='profile-pic img-fluid' src={user.photoURL ? user.photoURL : defaultUser} alt="" /></button>
+
                                         <button onClick={handleSignOut} className='btn btn-danger rounded-0 py-3 '>Logout</button>
                                     </>
                                     :
-                                    <button className='btn btn-danger  rounded-0 '><Nav.Link className='text-light' as={Link} to="/login">Login</Nav.Link ></button>
+                                    <>
+                                        <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/blogs">Blogs</Nav.Link ></button>
+
+                                        <button className='btn btn-danger  rounded-0 '><Nav.Link className='text-light' as={Link} to="/login">Login</Nav.Link ></button>
+
+                                    </>
                             }
                             {/* {
                                 (user && user.photoURL) ?
@@ -58,7 +69,7 @@ const Header = () => {
 
 
 
-                            <button className='btn btn-danger  rounded-0'><Nav.Link className='text-light' as={Link} to="/blogs">Blogs</Nav.Link ></button>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

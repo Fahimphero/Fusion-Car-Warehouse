@@ -11,3 +11,9 @@ link {
     padding-top: 27px;
     padding-bottom: 27px;
 }
+
+.profile-pic {
+    width: 56px;
+    /* padding: 3px; */
+    border: 2px solid #DC3545;
+}
